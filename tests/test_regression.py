@@ -4,6 +4,7 @@ import numpy as np
 
 from ..regression.mean_absolute_error import mean_absolute_error
 from ..regression.mean_squared_error import mean_squared_error
+from ..regression.root_mean_squared_error import root_mean_squared_error
 
 
 class TestRegression(unittest.TestCase):
@@ -17,6 +18,10 @@ class TestRegression(unittest.TestCase):
     def test_mean_squared_error(self):
         self.assertEqual(mean_squared_error(np.array([2, 4]), np.array([3,1])),
                          5.0, "Should be 5.0")
+
+    def test_root_mean_squared_error(self):
+        self.assertEqual(root_mean_squared_error(np.array([2, 4]), np.array([3, 1])),
+                         np.sqrt(5.0), "Should be {:.4f}".format(np.sqrt(5)))
 
 
 if __name__ == '__main__':
