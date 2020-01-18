@@ -1,1 +1,2 @@
-from .test_regression import TestRegression
+from .regression import TestRegression
+from .classification import TestClassification
